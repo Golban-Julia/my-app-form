@@ -98,7 +98,7 @@ const Form = () => {
                         render={({ field, fieldState: { error } }) => (
                             <TextField {...field}
                                 label="Phone number*"
-                                inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                               inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} 
                                 variant="outlined"
                                 type="tel"
                                 error={!!error}
@@ -108,12 +108,13 @@ const Form = () => {
                     </Grid>
 
                     <Grid item xs={12}>
-                        <TextField id="outlined-basic" label="Redress number" margin="normal" variant="outlined" />
+                        <TextField id="outlined-basic" label="Redress number" inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} margin="normal" variant="outlined" />
                         
                         <Controller control={control} name="knownTravellerNumber*" rules={{ required: "The field is required" }}
                         render={({ field, fieldState: { error } }) => (
                             <TextField {...field}
                                 label="Known traveller number*"
+                                inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
                                 margin="normal"
                                 variant="outlined"
                                 error={!!error}
